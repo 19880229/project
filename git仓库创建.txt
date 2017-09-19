@@ -1,0 +1,27 @@
+一配置git 
+git config -global user.name <name> #设置提交者名字
+git config -global user.email <email> #设置提交者邮箱
+git config -list #检查已有的配置信息
+
+二创建git仓库
+
+1.新建项目文件夹进去右键执行Git Bash
+
+2.输入 git init 
+
+3.config中添加如下代码否则不能push
+
+[receive]
+denyCurrentBranch = ignore
+
+4.随便添加相关文件
+
+5.执行git add *
+
+6.git commit -m'注释'
+
+7.仓库创建完成
+
+三检出创建的仓库
+
+git clone /path

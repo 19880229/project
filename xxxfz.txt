@@ -1,6 +1,17 @@
-11111111111111
-22222222222
-333333333333
-4444444444444
-55555555555555
-5555555555556666
+git branch yxx
+git checkout yxx
+
+
+
+git add yxxfz.txt
+git commit -m'fz'
+git push oright yxx
+git checkou master
+git checkout yxx 
+git pull oright yxx
+
+
+
+git add yxxfz.txt
+git commit -m'fz2'
+git push oright yxx

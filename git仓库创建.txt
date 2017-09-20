@@ -1,9 +1,5 @@
-一配置git 
-git config -global user.name <name> #设置提交者名字
-git config -global user.email <email> #设置提交者邮箱
-git config -list #检查已有的配置信息
 
-二创建git仓库
+一创建git仓库流程
 
 1.新建项目文件夹进去右键执行Git Bash
 
@@ -22,6 +18,42 @@ denyCurrentBranch = ignore
 
 7.仓库创建完成
 
-三检出创建的仓库
+8.检出创建的仓库
 
 git clone /path
+
+
+二 常用命令
+
+#配置相关命令
+git config -global user.name <name> (设置提交者名字)
+git config -global user.email <email> (设置提交者邮箱)
+git config -list (检查已有的配置信息)
+
+#初始化,提交,拉取相关命令
+git init (初始化仓库 加--bare 初始化裸仓库)
+
+git clone 仓库地址(克隆仓库) 本地仓库名称
+
+git add -A (保存所有改动)
+git commit -m'注释'(提交到本地)
+git push 分支名称 (提交到远程分支)
+git pull 分支名称(从远程拉取)
+git fetch 分支名称(拉取远程库中所有没有的数据及分支)
+
+
+#查看分支命令
+git branch -a (查看本地和远程分支)
+git branch -r (只查看远程分支)
+git branch (只查看本地分支)
+
+#创建分支命令
+git branch 分支名称 （创建本地分支）
+git checkout -b 分支名称 (创建本地分支并切换到当前创建分支)
+git push origin 分支名称(本地分支提交到远程)
+git push --set-upstream origin 分支名称（提交本地分支到远程）
+
+
+#删除分支命令
+git branch -d 分支名称（删除本地分支）
+git push origin --delete 分支名称（删除远程分支）

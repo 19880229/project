@@ -15,3 +15,6 @@ git pull oright yxx
 git add yxxfz.txt
 git commit -m'fz2'
 git push oright yxx
+
+
+git checkout origin/yxx

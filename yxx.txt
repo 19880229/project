@@ -11,3 +11,6 @@ git checkout yxx
 git push origin yxx
 git branch -a
 
+git add
+git commit -m''
+git status

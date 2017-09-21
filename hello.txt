@@ -1,7 +1,23 @@
-11111111111111
-1111111111111111111
-2222222222222222
-333333333333333333
-44444444444444444444
-555555555555555555
-6666666666666666
+
+git init 
+git clone git@github.com:19880229/project.git project1
+cd project1
+git branch -a
+git checkout develop
+ll
+cat hello.txt
+vi hello.txt
+i
+Esc 
+:wq
+git commit -am'冲突'
+git push origin develop
+git pull oeigin develop
+cat hello.txt
+vi hello.txt
+i
+Esc
+:wq
+git commit -am'解决'
+git push origin develop
+

@@ -78,7 +78,10 @@ Git
 		 git push origin --delete 分支名称  （删除远程分支）
 
 5、查看每个人分支最后一次提交
-       git branch -v
+git branch -v
+
+
+6
 
 
 

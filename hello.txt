@@ -1,1 +1,26 @@
-hello word? my name is willie. 
+
+git init 
+git clone git@github.com:19880229/project.git project1
+cd project1
+git branch -a
+git checkout develop
+ll
+cat hello.txt
+vi hello.txt
+i
+Esc 
+:wq
+git commit -am'冲突'
+git push origin develop
+git pull oeigin develop
+cat hello.txt
+vi hello.txt
+i
+Esc
+:wq
+git commit -am'解决'
+git push origin develop
+666666666666666
+888888888888888
+111111111111
+2222222222

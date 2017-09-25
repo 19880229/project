@@ -1,6 +1,4 @@
 
-111111111111111
-222222222222222
 git init 
 git clone git@github.com:19880229/project.git project1
 cd project1

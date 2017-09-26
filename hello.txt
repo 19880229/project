@@ -20,7 +20,4 @@ Esc
 :wq
 git commit -am'解决'
 git push origin develop
-666666666666666
-888888888888888
-111111111111
-2222222222
+

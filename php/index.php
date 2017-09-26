@@ -28,17 +28,20 @@ function voidAdd(&$x, &$y) {
 
 //方法调用
 $result = add(10, 5);
+
 //输出
-echo $result;
+echo "相加结果：".$result."\r\n";
 
 //PHP if else
 function calculate() {
+    $peoples = ["zhangsan", "lisi"];
     if (empty($peoples)) {
         echo "数据为空";
     } else {
         foreach ($peoples as $item) {
-           echo $item;
+            echo $item."\r\n";
         }
     }
 }
+calculate();
 

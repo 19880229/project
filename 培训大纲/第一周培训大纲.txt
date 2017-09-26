@@ -1,0 +1,11 @@
+1.git 熟悉
+
+阅读git 使用教程文档熟悉git 工作流程
+
+2.git 使用
+
+掌握常用命令： git clone、git add、 git commit、 git pull、 git push  
+
+3.实践
+
+本地模拟服务器客户机，完成克隆代码，拉代码，上传代码。

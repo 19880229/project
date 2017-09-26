@@ -1,0 +1,17 @@
+1.php 教程学习
+
+教程地址：http://www.w3school.com.cn/php/php_syntax.asp
+
+1.php 语法学习
+
+目标：学会定义函数，学会调用函数
+
+2.myslq 语法学习
+
+教程地址：https://www.w3cschool.cn/mysql/
+
+目标：学会查询语句，学会插入语句，学会修改语句
+
+3.实践
+
+目标：自己独立写一个查询会议详细信息的接口

@@ -45,7 +45,7 @@ CREATE TABLE student (
   DEFAULT CHARSET = utf8;
 
 -- 6.插入数据
--- 语法：INSERT INTO student(`列名`...) VALUES ('值'...)
+-- 语法：INSERT INTO 表名(`列名`...) VALUES ('值'...)
 INSERT INTO student (`name`, `age`, `num`, `mobile`, `class`, `grade`, `school`, `address`)
 VALUES ('张三', 18, 10001, 15833212323, '一班', '大一', '河北大学', '石家庄');
 INSERT INTO student (`name`, `age`, `num`, `mobile`, `class`, `grade`, `school`, `address`)

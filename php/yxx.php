@@ -56,3 +56,13 @@ function Name()
     }
 }
 Name();
+
+function  familyName($fname,$year){
+    echo"$fname zhang bron in $year\r\n";
+
+}
+
+familyName("tao","1975");
+familyName("si","1990");
+
+

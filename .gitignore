@@ -1,0 +1,5 @@
+.idea/
+container/
+vendor/
+composer.lock
+web.config

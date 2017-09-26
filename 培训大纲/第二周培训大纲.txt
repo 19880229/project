@@ -1,17 +1,17 @@
-1.php �̳�ѧϰ
+1.php 教程学习
 
-�̵̳�ַ��http://www.w3school.com.cn/php/php_syntax.asp
+教程地址：http://www.w3school.com.cn/php/php_syntax.asp
 
-1.php �﷨ѧϰ
+1.php 语法学习
 
-Ŀ�꣺ѧ�ᶨ�庯����ѧ����ú���
+目标：学会定义函数，学会调用函数
 
-2.myslq �﷨ѧϰ
+2.myslq 语法学习
 
-�̵̳�ַ��https://www.w3cschool.cn/mysql/
+教程地址：https://www.w3cschool.cn/mysql/
 
-Ŀ�꣺ѧ���ѯ��䣬ѧ�������䣬ѧ���޸����
+目标：学会查询语句，学会插入语句，学会修改语句
 
-3.ʵ��
+3.实践
 
-Ŀ�꣺�Լ�����дһ����ѯ������ϸ��Ϣ�Ľӿ�
+目标：自己独立写一个查询会议详细信息的接口

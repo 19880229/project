@@ -1,11 +1,11 @@
-1.git ��Ϥ
+1.git 熟悉
 
-�Ķ�git ʹ�ý̳��ĵ���Ϥgit ��������
+阅读git 使用教程文档熟悉git 工作流程
 
-2.git ʹ��
+2.git 使用
 
-���ճ������ git clone��git add�� git commit�� git pull�� git push  
+掌握常用命令： git clone、git add、 git commit、 git pull、 git push
 
-3.ʵ��
+3.实践
 
-����ģ��������ͻ�������ɿ�¡���룬�����룬�ϴ����롣
+本地模拟服务器客户机，完成克隆代码，拉代码，上传代码。

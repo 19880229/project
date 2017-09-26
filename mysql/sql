@@ -1,0 +1,70 @@
+-- 数据类型
+-- int bigint tinyint
+-- varchar(大小) 可变大小
+-- char(大小) 固定大小
+-- datetime 时间类型
+
+
+-- 1.删除数据库
+-- 语法：DROP DATABASE IF EXIST 数据库名
+DROP DATABASE IF EXISTS `Study`;
+
+-- 2.创建数据库
+-- CREATE DATABASE 数据库名
+CREATE DATABASE Study;
+
+-- 3.使用数据库
+-- 语法：use 数据库名
+USE Study;
+
+-- 4.删除表
+-- 语法：DROP TABLE IF EXIST 表名
+DROP TABLE IF EXISTS `student`;
+
+-- 5.创建表
+-- 语法：CREATE TABLE 表名（
+--  字段名 数据类型 长度 是否为空（默认为空），
+--  字段名 数据类型 长度 是否为空（默认为空）
+-- ）ENGINE=数据库引擎 DEFAULT CHARSET = 默认编码;
+-- AUTO_INCREMENT 自增
+-- PRIMARY KEY 主键，
+-- InnoDB 数据库引擎
+-- DEFAULT CHARSET 默认编码
+CREATE TABLE student(
+  `id` INT NOT NULL AUTO_INCREMENT  PRIMARY KEY, -- 主键
+  `name` VARCHAR(200), -- 姓名
+  `age` INT, -- 年龄
+  `num` INT, -- 学号
+  `mobile` INT,-- 手机号
+  `class` VARCHAR(200), -- 班级
+  `grade` VARCHAR(200), -- 年级
+  `school` VARCHAR(200),-- 学校
+  `address` VARCHAR(300)-- 地址
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+-- 6.插入数据
+-- 语法：INSERT INTO student(`列名`...) VALUES ('值'...)
+INSERT INTO student(`name`,`age`,`num`,`mobile`,`class`,`grade`,`school`,`address`)
+ VALUES ('张三',18,10001,15833212323,'一班','大一','河北大学','石家庄');
+INSERT INTO student(`name`,`age`,`num`,`mobile`,`class`,`grade`,`school`,`address`)
+ VALUES ('李四',21,10002,15633212323,'二班','大二','河北大学','天津');
+
+-- 7.查询
+-- 语法：SELECT
+--   列名 as 别名,
+--   列名 as 别名
+-- FROM  表名
+-- WERE 条件
+SELECT
+  `name` as studentName,
+  `age`
+FROM student
+WHERE age=18;
+
+-- 8.修改
+-- 语法：UPDATE 表名 SET 列名 = 值 WHERE 条件
+UPDATE student SET age = 20 WHERE `name` = '张三';
+
+-- 9.删除
+-- 语法：DELETE FROM 表名 WHERE 条件
+-- DELETE FROM  student WHERE `name` ='张三';

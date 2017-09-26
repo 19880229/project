@@ -5,6 +5,7 @@ require_once __DIR__ . '/db/DbHelper.php';
  * 查询学生信息列表信息
  */
 function getStudentList() {
+
     //获取mysql 链接对象
     $mysql = DbHelper::getPDO();
 

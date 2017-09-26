@@ -30,7 +30,7 @@ function voidAdd(&$x, &$y) {
 $result = add(10, 5);
 
 //输出
-echo "相加结果：".$result."\r\n";
+echo "相加结果：" . $result . "\r\n";
 
 //PHP if else
 function calculate() {
@@ -39,9 +39,9 @@ function calculate() {
         echo "数据为空";
     } else {
         foreach ($peoples as $item) {
-            echo $item."\r\n";
+            echo $item . "\r\n";
         }
     }
 }
-calculate();
 
+calculate();

@@ -6,63 +6,66 @@
  * Time: 10:43
  */
 
-
-
-//加法
-function Add($num1=0,$num2=0){
-    return $num=$num1+$num2;
-}
-
-//减法
-function Micus($num1=0,$num2=0)
-{
-    return $num = $num1 - $num2;
-}
-
-//乘法
-function Mul($num1=0,$num2=0)
-{
-    return $num = $num1 * $num2;
-}
-
-//除法
-function Div($num1=0,$num2=0)
-{
-    return $num = $num1 / $num2;
-}
-
-$result = Add(10, 5);
-echo"相加结果：".$result."\r\n";
-
-$result = Micus(10, 5);
-echo"相减结果：".$result."\r\n";
-
-$result = Mul(10, 5);
-echo"相乘结果：".$result."\r\n";
-
-$result = Div(10, 5);
-echo"相除结果：".$result."\r\n";
-
-function Name()
-{
-    $family = ["Zhao", "Qian", "Sun", "Li"];
-    if (empty($family)) {
-        echo "数据为空";
+//整合加、减、乘、除四个方法为一个方法（通过传参实现）
+function calction($nub1,$nub2,$cala){
+    if($cala=="add"){
+        return $nub1+$nub2;
+    } elseif($cala=="jianfa"){
+        return $nub1-$nub2;
+    } elseif ($cala=="chengfa"){
+        return $nub1*$nub2;
+    }elseif($cala=="chufa"){
+        return $nub1/$nub2;
     }
-    else {
-        foreach ($family as $item) {
-            echo $item . "\r\n";
-        }
-    }
-}
-Name();
-
-function  familyName($fname,$year){
-    echo"$fname zhang bron in $year\r\n";
 
 }
+$res1=calction("10","5","add");
+echo"相加结果为：".$res1."\r\n";
+$res2=calction("10","5","jianfa");
+echo"相加结果为：".$res2."\r\n";
+$res3=calction("10","5","chengfa");
+echo"相加结果为：".$res3."\r\n";
+$res4=calction("10","5","chufa");
+echo"相加结果为：".$res4."\r\n";
 
-familyName("tao","1975");
-familyName("si","1990");
 
 
+//将1-100中2的倍数的数据输出来
+function shuchu(){
+  for($nub3=0;$nub3<=100;$nub3++){
+      if($nub3 % 2==0){
+          echo"1-100中2的倍数有：".$nub3."\r\n";
+      }else{
+          echo"";
+      }
+  }
+}
+shuchu();
+
+
+
+//连接数据库
+require_once __DIR__ . '/db/yxx1.php';
+/**
+ * 查询学生信息列表信息
+ */
+function getStudentList() {
+    //获取mysql 链接对象
+    $mysql = DbHelper::getPDO();
+    //定义sql语句
+    $sqlStr = <<<sql
+    select * from student;
+sql;
+
+    //准备sql语句
+    $stmt = $mysql->prepare($sqlStr);
+    //执行sql语句
+    $stmt->execute();
+    //获取返回结果
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //打印结果
+    echo var_dump($result);
+}
+
+//调用方法
+getStudentList();

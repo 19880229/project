@@ -160,7 +160,7 @@ add();*/
 
 
 //连接数据库
-require_once __DIR__ . '/db/hly2.php';
+require_once __DIR__ . '/db/hly1.php';
 /**
  * 查询学生信息列表信息
  */

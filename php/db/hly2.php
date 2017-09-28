@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: HP
- * Date: 2017-09-28
- * Time: 8:48
+ * User: 贤贤
+ * Date: 2017/9/27
+ * Time: 17:02
  */
 namespace DbConfig {
     interface Config {

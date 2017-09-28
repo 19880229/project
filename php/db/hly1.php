@@ -1,15 +1,13 @@
 <?php
 require_once __DIR__ . '/hly2.php';
 
-class DbHelper
-{
+class DbHelper {
     /**
      * @var PDO
      */
     private static $pdo;
 
-    public static function getPDO()
-    {
+    public static function getPDO() {
 
         if (!is_null(self::$pdo)) {
             return self::$pdo;
@@ -23,4 +21,3 @@ class DbHelper
             return null;
         }
     }
-}

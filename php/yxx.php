@@ -60,7 +60,7 @@ shuoushu();
 
 
 //连接数据库
-require_once __DIR__ . '/db/yxx1.php';
+require_once __DIR__ . '/db/DbHelper.php';
 /**
  * 查询学生信息列表信息
  */
@@ -69,7 +69,7 @@ function getStudentList() {
     $mysql = DbHelper::getPDO();
     //定义sql语句
     $sqlStr = <<<sql
-   SELECT 
+   SELECT * from searchSeminar
 sql;
     //准备sql语句
     $stmt = $mysql->prepare($sqlStr);

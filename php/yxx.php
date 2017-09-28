@@ -87,33 +87,3 @@ getStudentList();
 
 //查询会议详细信息的接口
 
-//字符串函数
-function zfchanshu()
-{
-//strlen()函数  返回字符串
-    echo strlen('hello world!');
-    echo '     <br>';
-//strpos()函数 用于检索字符串内指定的字符或文本
-    echo strpos('hello world!', 'world');
-    echo '     <br> ';
-
-//运算符
-   $x=10;
-   $y=6;
-   echo ($x + $y);
-   echo "     <br>";
-   echo ($x - $y);
-   echo "     <br>";
-   echo ($x * $y);
-   echo "     <br>";
-   echo ($x / $y);
-   echo "     <br>";
-
-
-//字符串赋值
-    $a="hello";
-    $b
-
-
-}
-zfchanshu();

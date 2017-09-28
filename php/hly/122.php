@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: 贤贤
- * Date: 2017/9/28
- * Time: 13:12
+ *
+ *
+ *
  */
 require __DIR__ . '/../db/DbHelper.php';
 final class GetInfo{
@@ -11,7 +10,8 @@ final class GetInfo{
     public function get($seminarId){
         $mysql = $pdo = DbHelper::getPDO();
         $sql = <<<GOF
-        select seminarId,tenantId,sceneName,status,name,createTime from searchSeminar where seminarId = :seminarId
+        select seminarId,tenantId,sceneName,status,name,createTime 
+        from searchSeminar
 GOF;
         $sth = $mysql->prepare($sql);
         $sth->bindValue('seminarId',$seminarId);
@@ -23,3 +23,4 @@ GOF;
 
 $dao = new GetInfo();
 $dao->get(20);
+

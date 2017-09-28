@@ -44,7 +44,6 @@ echo"相加结果为：".$res4."\r\n"."<br>";
 
 
 
-
 //将1-100中2的倍数的数据输出来
 function shuoushu(){
   for($nub3=0;$nub3<=100;$nub3++){
@@ -69,7 +68,9 @@ function getStudentList() {
     $mysql = DbHelper::getPDO();
     //定义sql语句
     $sqlStr = <<<sql
-   SELECT * from searchSeminar
+  select 
+  seminarId,tenantId,sceneName,status,name,createTime 
+  from searchSeminar
 sql;
     //准备sql语句
     $stmt = $mysql->prepare($sqlStr);

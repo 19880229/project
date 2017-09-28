@@ -5,6 +5,21 @@
  * Date: 2017/9/26
  * Time: 10:43
  */
+//PHP if else
+function calculate() {
+    $peoples = ["zhangsan", "lisi"];
+    if (empty($peoples)) {
+        echo "数据为空";
+    } else {
+        foreach ($peoples as $item) {
+            echo $item."\r\n";
+            echo "<br>";
+        }
+    }
+}
+calculate();
+
+
 
 //整合加、减、乘、除四个方法为一个方法（通过传参实现）
 function calction($nub1,$nub2,$cala){
@@ -17,30 +32,30 @@ function calction($nub1,$nub2,$cala){
     }elseif($cala=="chufa"){
         return $nub1/$nub2;
     }
-
 }
 $res1=calction("10","5","add");
-echo"相加结果为：".$res1."\r\n";
+echo"相加结果为：".$res1."\r\n"."<br>";
 $res2=calction("10","5","jianfa");
-echo"相加结果为：".$res2."\r\n";
+echo"相加结果为：".$res2."\r\n"."<br>";
 $res3=calction("10","5","chengfa");
-echo"相加结果为：".$res3."\r\n";
+echo"相加结果为：".$res3."\r\n"."<br>";
 $res4=calction("10","5","chufa");
-echo"相加结果为：".$res4."\r\n";
+echo"相加结果为：".$res4."\r\n"."<br>";
+
 
 
 
 //将1-100中2的倍数的数据输出来
-function shuchu(){
+function shuoushu(){
   for($nub3=0;$nub3<=100;$nub3++){
       if($nub3 % 2==0){
           echo"1-100中2的倍数有：".$nub3."\r\n";
       }else{
-          echo"";
+          echo"<br>";
       }
   }
 }
-shuchu();
+shuoushu();
 
 
 
@@ -54,9 +69,8 @@ function getStudentList() {
     $mysql = DbHelper::getPDO();
     //定义sql语句
     $sqlStr = <<<sql
-  select * from student
+   SELECT 
 sql;
-
     //准备sql语句
     $stmt = $mysql->prepare($sqlStr);
     //执行sql语句
@@ -66,6 +80,40 @@ sql;
     //打印结果
     echo var_dump($result);
 }
-
 //调用方法
 getStudentList();
+
+
+
+//查询会议详细信息的接口
+
+//字符串函数
+function zfchanshu()
+{
+//strlen()函数  返回字符串
+    echo strlen('hello world!');
+    echo '     <br>';
+//strpos()函数 用于检索字符串内指定的字符或文本
+    echo strpos('hello world!', 'world');
+    echo '     <br> ';
+
+//运算符
+   $x=10;
+   $y=6;
+   echo ($x + $y);
+   echo "     <br>";
+   echo ($x - $y);
+   echo "     <br>";
+   echo ($x * $y);
+   echo "     <br>";
+   echo ($x / $y);
+   echo "     <br>";
+
+
+//字符串赋值
+    $a="hello";
+    $b
+
+
+}
+zfchanshu();

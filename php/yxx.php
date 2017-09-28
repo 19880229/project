@@ -54,7 +54,7 @@ function getStudentList() {
     $mysql = DbHelper::getPDO();
     //定义sql语句
     $sqlStr = <<<sql
-    select * from student;
+  select * from student
 sql;
 
     //准备sql语句

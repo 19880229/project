@@ -15,3 +15,4 @@ namespace DbConfig {
         const MYSQL_USER_PASSWORD = '4VCK8lVM9qC';
     }
 }
+

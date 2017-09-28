@@ -169,7 +169,12 @@ function getStudentList() {
     $mysql = DbHelper::getPDO();
     //定义sql语句
     $sqlStr = <<<sql
-    select * from student;
+     SELECT 
+name,
+ age ,
+ id 
+ FROM student
+ ORDER BY id DESC
 sql;
 
     //准备sql语句
@@ -184,3 +189,17 @@ sql;
 
 //调用方法
 getStudentList();
+
+$num = 1;
+$count = 0;
+while($num<=100)
+{
+    if($num%2==0)
+    {
+        $count++;
+    }
+    $num++;
+}
+echo $count;
+
+

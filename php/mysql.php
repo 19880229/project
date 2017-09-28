@@ -13,9 +13,10 @@ function getStudentList() {
     $sqlStr = <<<sql
     SELECT
       `name` as studentName,
-      `age`
+      `age` as studentAge
     FROM student
 sql;
+
 
     //准备sql语句
     $stmt = $mysql->prepare($sqlStr);

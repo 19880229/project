@@ -155,21 +155,32 @@ add();*/
     }
 }
 add();*/
-echo "This is a test</br>";
-echo "asdfasdfadsf";
-echo '<hr>';
-$mysql_server_name="localhost"; //数据库服务器名称
-$mysql_username="root"; // 连接数据库用户名
-$mysql_password="root"; // 连接数据库密码
-$mysql_database="study"; // 数据库的名字
 
-// 连接到数据库
-$conn=mysqli_connect($mysql_server_name, $mysql_username, $mysql_password);
-if (!$conn) {
-    die("连接错误".mysqli_connect_error());
-}else{
 
-    echo '连接成功！';
+
+
+//连接数据库
+require_once __DIR__ . '/db/hly2.php';
+/**
+ * 查询学生信息列表信息
+ */
+function getStudentList() {
+    //获取mysql 链接对象
+    $mysql = hly1::getPDO();
+    //定义sql语句
+    $sqlStr = <<<sql
+    select * from student;
+sql;
+
+    //准备sql语句
+    $stmt = $mysql->prepare($sqlStr);
+    //执行sql语句
+    $stmt->execute();
+    //获取返回结果
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //打印结果
+    echo var_dump($result);
 }
 
-
+//调用方法
+getStudentList();

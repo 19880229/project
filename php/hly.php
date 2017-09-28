@@ -166,7 +166,7 @@ require_once __DIR__ . '/db/hly2.php';
  */
 function getStudentList() {
     //获取mysql 链接对象
-    $mysql = hly1::getPDO();
+    $mysql = DbHelper::getPDO();
     //定义sql语句
     $sqlStr = <<<sql
     select * from student;

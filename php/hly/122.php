@@ -1,35 +1,25 @@
 <?php
-
-
-require_once __DIR__ . '/db/DbHelper.php';
-
 /**
- * 查询学生信息列表信息
+ * Created by PhpStorm.
+ * User: 贤贤
+ * Date: 2017/9/28
+ * Time: 13:12
  */
-function getStudentList() {
+require __DIR__ . '/../db/DbHelper.php';
+final class GetInfo{
 
-    //获取mysql 链接对象
-    $mysql = DbHelper::getPDO();
-
-    //定义sql语句
-    $sqlStr = <<<sql
-    SELECT 
-    name  
-    FROM searchSeminar
-    ORDER BY id DESC
-
-sql;
-
-
-    //准备sql语句
-    $stmt = $mysql->prepare($sqlStr);
-    //执行sql语句
-    $stmt->execute();
-    //获取返回结果
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //打印结果
-    echo var_dump($result);
+    public function get($seminarId){
+        $mysql = $pdo = DbHelper::getPDO();
+        $sql = <<<GOF
+        select seminarId,tenantId,sceneName,status,name,createTime from searchSeminar where seminarId = :seminarId
+GOF;
+        $sth = $mysql->prepare($sql);
+        $sth->bindValue('seminarId',$seminarId);
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+        print_r($result);
+    }
 }
 
-//调用方法
-getStudentList();
+$dao = new GetInfo();
+$dao->get(20);

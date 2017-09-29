@@ -14,7 +14,7 @@ function getStudentList() {
     SELECT
       `name` as studentName,
       `age` as studentAge
-    FROM student
+    FROM student limit 0,10
 sql;
 
 

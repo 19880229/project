@@ -156,15 +156,12 @@ add();*/
 }
 add();*/
 
-
-
-
 //连接数据库
 require_once __DIR__ . '/db/hly1.php';
 /**
  * 查询学生信息列表信息
  */
-function getStudentList() {
+/*function getStudentList() {
     //获取mysql 链接对象
     $mysql = DbHelper::getPDO();
     //定义sql语句
@@ -188,18 +185,84 @@ sql;
 }
 
 //调用方法
-getStudentList();
+getStudentList();*/
 
-$num = 1;
-$count = 0;
+/*$num = 1;
+
 while($num<=100)
 {
     if($num%2==0)
     {
-        $count++;
+        echo $num."\r\n";
     }
     $num++;
+}*/
+/*function add($sum1,$sum2,$count){
+    if($count=="add1")
+    {
+        return $sum1+$sum2;
+    }elseif ($count=="jian")
+    {
+        return $sum1-$sum2;
+    }elseif ($count=="mul")
+    {
+        return $sum1*$sum2;
+    }elseif ($count=="div")
+    {
+        return $sum1/$sum2;
+    }
 }
-echo $count;
+$result=add(10,5,"add1");
+echo "输出结果".$result."<br>";
+$result=add(10,5,"jian");
+echo "输出结果".$result."<br>";
+$result=add(10,5,"mul");
+echo "输出结果".$result."<br>";
+$result=add(10,5,"div");
+echo "输出结果".$result."<br>";*/
+/*function add($sum1,$sum2,$count){
+    switch ($count){
+        case "+":
+            return $sum1+$sum2;
+            break;
+        case"-":
+            return $sum1+$sum2;
+            break;
+        case"*":
+            return $sum1*$sum2;
+            break;
+        case "/":
+            return $sum1/$sum2;
+            break;
+    }
+}
+$result=add(10,5,"+");
+echo "输出结果".$result."<br>";
+$result=add(10,5,"-");
+echo "输出结果".$result."<br>";
+$result=add(10,5,"*");
+echo "输出结果".$result."<br>";
+$result=add(10,5,"/");
+echo "输出结果".$result."<br>";*/
 
 
+$dbms='mysql';     //数据库类型
+$host='124.239.180.30'; //数据库主机名
+$dbName='dev';    //使用的数据库
+$user='dev_rw';      //数据库连接用户名
+$pass='4VCK8lVM9qC';          //对应的密码
+$dsn="$dbms:host=$host;dbname=$dbName";
+
+/*$conn=mysqli_connect($host,$user,$pass,$dbName);//连接并返回
+if (mysqli_connect_errno()){
+    die('连接失败'.mysqli_connect_error());
+}else{
+    echo '<h2>连接成功</h2>';
+}*/
+
+$dbh = new PDO($dsn, $user, $pass); //初始化一个PDO对象
+$sql = "SELECT * FROM searchSeminar limit 0,10";
+$pre = $dbh->prepare($sql);
+$pre->execute();
+$result = $pre->fetchAll(PDO::FETCH_ASSOC);
+echo var_dump($result);

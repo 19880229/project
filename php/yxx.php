@@ -19,8 +19,6 @@ function calculate() {
 }
 calculate();
 
-
-
 //整合加、减、乘、除四个方法为一个方法（通过传参实现）
 function calction($nub1,$nub2,$cala){
     if($cala=="add"){
@@ -42,8 +40,6 @@ echo"相加结果为：".$res3."\r\n"."<br>";
 $res4=calction("10","5","chufa");
 echo"相加结果为：".$res4."\r\n"."<br>";
 
-
-
 //将1-100中2的倍数的数据输出来
 function shuoushu(){
   for($nub3=0;$nub3<=100;$nub3++){
@@ -58,27 +54,24 @@ shuoushu();
 
 
 
-//连接数据库
-require_once __DIR__ . '/db/DbHelper.php';
-/**
- * 查询学生信息列表信息
- */
-function getStudentList() {
-    //获取mysql 链接对象
+//查询会议
+require_once __DIR__ . "/db/DbHelper.php";
+function  getStudentList(){
+    //获取MySQL链接对象
     $mysql = DbHelper::getPDO();
-    //定义sql语句
+    //定义SQL语句
     $sqlStr = <<<sql
-  select 
-  seminarId,tenantId,sceneName,status,name,createTime 
-  from searchSeminar
+select 
+seminarld,tenantld,sceneName,status,name,createTime,sortStatus,startTime
+from  searchSeminar
 sql;
-    //准备sql语句
+    //准备SQL语句
     $stmt = $mysql->prepare($sqlStr);
-    //执行sql语句
+    //执行SQL语句
     $stmt->execute();
     //获取返回结果
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //打印结果
+    // 打印结果
     echo var_dump($result);
 }
 //调用方法
@@ -86,5 +79,4 @@ getStudentList();
 
 
 
-//查询会议详细信息的接口
 

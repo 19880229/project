@@ -1,9 +1,11 @@
 <?php
 /**
- *
- *
- *
+ * Created by PhpStorm.
+ * User: HP
+ * Date: 2017-10-09
+ * Time: 10:19
  */
+
 require __DIR__ . '/../db/DbHelper.php';
 final class GetInfo{
 

@@ -113,11 +113,12 @@ echo "<br>";
 $manager=new Manager();
 echo "经理的工资是:".$manager->getSal();*/
 
-class Math{
+/*class Math{
     public function Max($a,$b)
     {
         return $a>$b?$a:$b;
     }
 }
 $math=new Math();
-echo "最大值是",$math->Max(99,100,100,100);
+echo "最大值是",$math->Max(99,100,100,100);*/
+

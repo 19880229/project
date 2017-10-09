@@ -157,11 +157,11 @@ add();*/
 add();*/
 
 //连接数据库
-require_once __DIR__ . '/db/hly1.php';
+//require_once __DIR__ . '/db/DbHelper.php';
 /**
  * 查询学生信息列表信息
  */
-function getStudentList() {
+/*function getStudentList() {
     //获取mysql 链接对象
     $mysql = DbHelper::getPDO();
     //定义sql语句
@@ -184,10 +184,10 @@ sql;
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     //打印结果
     echo json_encode($result);
-}
+}*/
 
 //调用方法
-getStudentList();
+//getStudentList();
 
 /*$num = 1;
 
@@ -253,14 +253,14 @@ $dbms = 'mysql';     //数据库类型
 $host = '124.239.180.30'; //数据库主机名
 $dbName = 'dev';    //使用的数据库
 $user = 'dev_rw';      //数据库连接用户名
-$pass = '4VCK8lVM9qC';          //对应的密码
+$password = '4VCK8lVM9qC';          //对应的密码
 $dsn = "$dbms:host=$host;dbname=$dbName";
 
 
-$dbh = new PDO($dsn, $user, $pass); //初始化一个PDO对象
+$dbh = new PDO($dsn, $user, $password); //初始化一个PDO对象
 $sql = "SELECT seminarId,tenantId,sceneName,status,name  FROM searchSeminar limit 0,10";
 $pre = $dbh->prepare($sql);
 $pre->execute();
 $result = $pre->fetchAll(PDO::FETCH_ASSOC);
-echo json_encode($result);
+echo json_encode($result)."<br>";
 

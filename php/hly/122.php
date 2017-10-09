@@ -10,14 +10,21 @@ final class GetInfo{
     public function get($seminarId){
         $mysql = $pdo = DbHelper::getPDO();
         $sql = <<<GOF
-        select seminarId,tenantId,sceneName,status,name,createTime 
-        from searchSeminar
+        SELECT 
+    seminarId,
+    tenantId,
+    sceneName,
+    status
+ FROM searchSeminar 
+ ORDER BY seminarId DESC
+ limit 0,10
+ 
 GOF;
         $sth = $mysql->prepare($sql);
         $sth->bindValue('seminarId',$seminarId);
         $sth->execute();
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
-        print_r($result);
+        echo json_encode($result);
     }
 }
 

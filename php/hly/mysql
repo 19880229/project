@@ -1,7 +1,15 @@
-1、创建library数据库
+1、删除数据库
+DROP DATABASE IF EXISTS `library`;
+
+2、创建library数据库
 CREATE DATABASE library;
 
-2、创建bookShelves表
+3、USE Study;
+
+4、删除存在的表
+DROP TABLE IF EXISTS `bookShelves`;
+
+4、创建bookShelves表
 CREATE TABLE bookShelves
 (
    `id`     INT NOT NULL AUTO_INCREMENT PRIMARY KEY, -- 主键
@@ -12,18 +20,19 @@ CREATE TABLE bookShelves
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
-3、插入语句
+5、插入语句
   INSERT INTO bookShelves (`name`, `addTime`, `updateTime`)
   VALUES ('文学', 2017-5-1,2016-8-2);
   INSERT INTO bookShelves (`name`, `addTime`, `updateTime`)
      VALUES ('名著',2017-7-4,2016-8-10);
 
+DROP TABLE IF EXISTS `book`;
 
-4、创建book表
+6、创建book表
      CREATE TABLE book
      (
         `id`     INT NOT NULL AUTO_INCREMENT PRIMARY KEY, -- 主键
-     `bookShelvesId`  INT NOT NULL, -- 书架序号
+         bookShelves_id   int, -- 书架序号
         name           VARCHAR(200),-- 名称
         author          VARCHAR(200), -- 作者
         salary         DECIMAL(5,2), -- 价格
@@ -33,9 +42,29 @@ CREATE TABLE bookShelves
      )
        ENGINE = InnoDB
        DEFAULT CHARSET = utf8;
+7、 添加外键  ALTER TABLE book ADD FOREIGN KEY(bookShelves_id) REFERENCES bookShelves(id);
 
-5、插入语句
-        INSERT INTO book (bookShelvesId, name,author, salary, type ,addTime, updateTime)
-         VALUES (2,'《三国演义》','罗贯中',35,'名著', 2017-5-1,2016-8-2);
-         INSERT INTO book (bookShelvesId, name, author, salary, type , addTime, updateTime)
-         VALUES (1,'《鲁迅作品全集》','鲁迅',35,'文学', 2017-5-4,2016-8-2);
+8、插入语句
+        INSERT INTO book (name,author, salary, type ,addTime, updateTime)
+         VALUES ('《三国演义》','罗贯中',35,'名著', 2017-5-1,2016-8-2);
+         INSERT INTO book (name, author, salary, type , addTime, updateTime)
+         VALUES ('《鲁迅作品全集》','鲁迅',35,'文学', 2017-5-4,2016-8-2);
+
+9、 找出外键       show create table emp;
+10、删除外键：
+  alter table emp drop foreign key 外键名;
+
+11、连表查询
+select
+a.`name`,b.`name`,b.author,b.salary,b.type
+from bookshelves a
+RIGHT join book b
+on a.id = b.bookShelves_id
+where author='鲁迅'
+
+
+select a.name,COUNT(1) AS count
+from bookshelves a
+LEFT join book b
+on a.id = b.bookShelves_id
+GROUP BY A.id

@@ -16,3 +16,6 @@ class Animal{
         $this->weight=$w;
     }
 }
+
+
+

@@ -72,26 +72,6 @@ $user->setAge(150);
 echo $user->getAge()."age,his sal is ".$user->getSal();*/
 
 
-/*$dbms='mysql';     //数据库类型
-$host='124.239.180.30'; //数据库主机名
-$dbName='dev';    //使用的数据库
-$user='dev_rw';      //数据库连接用户名
-$pass='4VCK8lVM9qC';          //对应的密码
-$dsn="$dbms:host=$host;dbname=$dbName";
-
-try {
-    $dbh = new PDO($dsn, $user, $pass); //初始化一个PDO对象
-    echo "连接成功<br/>";
-    //你还可以进行一次搜索操作
-    foreach ($dbh->query('SELECT seminarId,tenantId,sceneName,status,name  FROM searchSeminar limit 0,10') as $row) {
-        echo json_encode($row); //你可以用 echo($GLOBAL); 来看到这些值
-    }
-
-    $dbh = null;
-} catch (PDOException $e) {
-    die ("Error!: " . $e->getMessage() . "<br/>");
-}*/
-
 /*class employee{
     protected $sal=3000;
     public function getSal(){
@@ -122,3 +102,101 @@ echo "经理的工资是:".$manager->getSal();*/
 $math=new Math();
 echo "最大值是",$math->Max(99,100,100,100);*/
 
+/*class user{
+    private static $count = 0;  //记录所有用户的登录情况.
+    public function __construct()
+    {
+        self::$count=self::$count+1;
+    }
+    public function getCount(){
+        return self::$count;
+    }
+    public function __destruct()
+    {
+        self::$count=self::$count-1;
+    }
+}
+$user1=new user();
+$user2=new user();
+$user3=new user();
+echo "now here have".$user1->getCount()."user";
+echo "<br>";
+unset($user3);
+echo "now here have".$user1->getCount()."user";*/
+
+/*class dog{
+    protected  $eyeNumber=2;//属性
+    //返回封装属性的方法.
+    public function getEyeNumber(){
+      return $this->eyeNumber;
+    }
+    public function bake(){
+        return " bake wang...wang";
+    }
+    public function run(){
+        return "dog can run";
+}
+}
+$dog=new Dog();
+echo "dog have".$dog->getEyeNumber()."eye.<br>";
+echo "dog can".$dog->bake()."<br>".$dog->run();
+echo "<br><br>";
+class myDog extends dog{
+    private $name='狗狗';
+    public function getName(){
+        return $this->name;
+    }
+    public function yaff(){
+        return $this->name."yaff, heng....heng...";
+    }
+
+}
+$myDog=new myDog();
+echo $myDog->getName()."have".$myDog->getEyeNumber()."eye.<br>";
+echo $myDog->yaff()."<br>".$myDog->run();*/
+class Student{
+    protected $grade;
+    public function getGrade(){
+        return $this->grade;
+    }
+    public function setGrade($_grade){
+        $this->setGrade($_grade);
+    }
+
+}
+interface User{
+    function getName();
+    function setName($_name);
+}
+//只有管理员可以设置公告
+interface  Administrator{
+    function setBulletin($_bulletin);
+}
+class StudentAdmin extends Student implements  User,Administrator{
+     function getGrade()
+     {
+         return $this->grade;
+     }
+     function setGrade($_grade)
+     {
+        $this->grade=$_grade;
+     }
+
+    function getName(){
+      return  $this->name;
+    }
+    function setName($_name){
+        $this->name = $_name;
+    }
+    function setBulletin($_bulletin){
+        $this->setBulletin=$_bulletin;
+    }
+}
+$s=new StudentAdmin();
+$s->setName("tom");
+echo "名字是".$s->getName();
+echo "<br>";
+$s->setGrade(99);
+echo "分数是". $s->getGrade();
+echo "<br>";
+echo "输出".$s->setBulletin("公告内容");

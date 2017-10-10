@@ -250,17 +250,17 @@ echo "输出结果".$result."<br>";*/
 
 
 $dbms = 'mysql';     //数据库类型
-$host = '124.239.180.30'; //数据库主机名
-$dbName = 'dev';    //使用的数据库
-$user = 'dev_rw';      //数据库连接用户名
-$password = '4VCK8lVM9qC';          //对应的密码
+$host = 'localhost'; //数据库主机名
+$dbName = 'Study';    //使用的数据库
+$user = 'root';      //数据库连接用户名
+$password = 'root';          //对应的密码
 $dsn = "$dbms:host=$host;dbname=$dbName";
 
 
 $dbh = new PDO($dsn, $user, $password); //初始化一个PDO对象
-$sql = "SELECT seminarId,tenantId,sceneName,status,name  FROM searchSeminar limit 0,10";
+$sql = "SELECT name FROM user";
 $pre = $dbh->prepare($sql);
 $pre->execute();
 $result = $pre->fetchAll(PDO::FETCH_ASSOC);
-echo json_encode($result)."<br>";
+echo var_dump($result)."<br>";
 

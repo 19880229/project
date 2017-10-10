@@ -1,0 +1,41 @@
+1、创建library数据库
+CREATE DATABASE library;
+
+2、创建bookShelves表
+CREATE TABLE bookShelves
+(
+   `id`     INT NOT NULL AUTO_INCREMENT PRIMARY KEY, -- 主键
+  `name`    VARCHAR(200), -- 书架名称
+  addtime        datetime,-- 添加时间
+  updatetime     datetime -- 修改时间
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
+
+3、插入语句
+  INSERT INTO bookShelves (`name`, `addtime`, `updatetime`)
+  VALUES ('文学', 2017-5-1,2016-8-2);
+  INSERT INTO bookShelves (`name`, `addtime`, `updatetime`)
+     VALUES ('名著',2017-7-4,2016-8-10);
+
+
+4、创建book表
+     CREATE TABLE book
+     (
+        `id`     INT NOT NULL AUTO_INCREMENT PRIMARY KEY, -- 主键
+     `bookShelvesid`  INT NOT NULL, -- 书架序号
+        name           VARCHAR(200),-- 名称
+        autor          VARCHAR(200),
+        salary         DECIMAL(5,2),
+        type           VARCHAR(200),
+       addtime        datetime,-- 添加时间
+       updatetime     datetime -- 修改时间
+     )
+       ENGINE = InnoDB
+       DEFAULT CHARSET = utf8;
+
+5、插入语句
+        INSERT INTO book (bookShelvesid, name,autor, salary, type ,addtime, updatetime)
+         VALUES (2,'《三国演义》','罗贯中',35,'名著', 2017-5-1,2016-8-2);
+         INSERT INTO book (bookShelvesid, name, autor, salary, type , addtime, updatetime)
+         VALUES (1,'《鲁迅作品全集》','鲁迅',35,'文学', 2017-5-4,2016-8-2);

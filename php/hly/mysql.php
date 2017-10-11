@@ -33,7 +33,25 @@ GOF;
 $dao = new GetInfo();
 $dao->get(20);*/
 
-function getBookList(){
+/*$con = mysqli_connect("localhost","root","root");
+if (!$con)
+{
+    die('Could not connect: ' . mysqli_error());
+}
+
+if (mysqli_query("CREATE DATABASE db_sk",$con))
+{
+    echo "Database created";
+}
+else
+{
+    echo "Error creating database: " . mysqli_error();
+}
+
+mysqli_close($con);
+*/
+
+/*function getBookList(){
     $dbms = 'mysql';     //数据库类型
     $host = 'localhost'; //数据库主机名
     $dbName = 'library';    //使用的数据库
@@ -44,10 +62,10 @@ function getBookList(){
 
     $dbh = new PDO($dsn, $user, $password); //初始化一个PDO对象
     $sql = "INSERT INTO book (name,author, salary, type ,addTime, updateTime)
-         VALUES ('《西游记》','吴承恩',50,'名著', 2017-5-1,2016-8-2);";
+         VALUES ('《西游记》','吴承恩',50,'名著', 2017-5-1,2016-8-2)";
     $sql="UPDATE book
        SET name = '《隋唐志传》'
-      WHERE author = '罗贯中';";
+      WHERE author = '罗贯中'";
     $sql="select
 a.`name`,b.`name`,b.author,b.salary,b.type
 from bookshelves a
@@ -59,4 +77,5 @@ where author='鲁迅'";
     $result = $pre->fetchAll(PDO::FETCH_ASSOC);
     echo var_dump($result)."<br>";
 }
-getBookList();
+//调用方法
+getBookList();*/

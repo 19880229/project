@@ -9,10 +9,10 @@
 namespace DbConfig {
     interface Config {
         // MY SQL配置
-        const MYSQL_HOST = '124.239.180.30';
-        const MYSQL_DB_NAME = 'dev';
-        const MYSQL_USER_NAME = 'dev_rw';
-        const MYSQL_USER_PASSWORD = '4VCK8lVM9qC';
+        const MYSQL_HOST = 'localhost';
+        const MYSQL_DB_NAME = 'library';
+        const MYSQL_USER_NAME = 'root';
+        const MYSQL_USER_PASSWORD = 'root';
     }
 }
 

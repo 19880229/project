@@ -248,7 +248,7 @@ $result=add(10,5,"/");
 echo "输出结果".$result."<br>";*/
 
 
-
+function getBookList(){
 $dbms = 'mysql';     //数据库类型
 $host = 'localhost'; //数据库主机名
 $dbName = 'Study';    //使用的数据库
@@ -263,4 +263,6 @@ $pre = $dbh->prepare($sql);
 $pre->execute();
 $result = $pre->fetchAll(PDO::FETCH_ASSOC);
 echo var_dump($result)."<br>";
+}
+getBookList();
 

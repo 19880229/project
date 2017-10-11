@@ -71,7 +71,6 @@ echo "<br>";
 $user->setAge(150);
 echo $user->getAge()."age,his sal is ".$user->getSal();*/
 
-
 /*class employee{
     protected $sal=3000;
     public function getSal(){

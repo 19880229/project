@@ -29,7 +29,7 @@ function write() {
 
 write();//调用函数
 
-//PHP 函数参数
+//PHP 函数参数参数
 function lastName($lName, $year) {
 
 

@@ -19,13 +19,15 @@
  * switch 语句 - 语句多个代码块之一来执行
  */
 
+//常量
+const a = 1;
+
 //1.函数学习
 function write() {
     echo "Hello World!" . "\n\r";
 }
 
 write();//调用函数
-
 
 //PHP 函数参数
 function lastName($lName, $year) {
@@ -35,6 +37,14 @@ function lastName($lName, $year) {
 lastName('梦', 1995);
 lastName('涛', 1998);
 
+//引用参数
+$message = "";
+function hello(&$message) {
+    $message = "hello";
+}
+
+hello();
+echo $message;
 
 //PHP 默认参数值
 function math($minNumber = 60) {
@@ -56,9 +66,9 @@ function sum($n, $m) {
 $a = sum(4, 5);
 echo ($a) . "\n\r";
 
-/*echo "5 + 10 = " . sum(5, 10) . "\n\r";
+echo "5 + 10 = " . sum(5, 10) . "\n\r";
 echo "10 + 10 = " . sum(10, 10) . "\n\r";
-echo "12 + 10 = " . sum(12, 10) . "\n\r";*/
+echo "12 + 10 = " . sum(12, 10) . "\n\r";
 
 
 //2.IF 语句学习
@@ -70,7 +80,6 @@ function void() {
         echo "Have a good afternoon!" . "\n\r";
     } else {
         echo "Have a good evening!" . "\n\r";
-
     }
 }
 
@@ -87,8 +96,6 @@ function add() {
             echo "星期二" . "\n\r";
             break;
         case 3:
-            echo "星期三" . "\n\r";
-            break;
         case 4:
             echo "星期四" . "\n\r";
             break;
@@ -125,8 +132,9 @@ update();
 
 //5.foreach 循环学习 foreach 循环只适用于数组
 function calculate() {
-    $colors = array("red", "green", "blue", "yellow");
-    foreach ($colors as $item) {
+    $colors = array("red", "green", "blue", "yellow");//索引数组
+    //$colors = ["zhangsan"=>"lisi","wangwu"=>"zhaoliu"];//关联数组
+    foreach ($colors as $key => $item) {
         echo $item . "\n\r";
     }
 
@@ -145,3 +153,24 @@ echo "I like " . $colors[0] . ", " . $colors[1] . " and " . $colors[2] . "." . "
 
 $age = array("Bill" => "23", "Joe" => "15", "Peter" => 35);
 echo "Peter is " . $age['Peter'] . " years old." . "\n\r";
+
+
+//多维数组
+$people = ["中国人" => ["河北人" => ["石家庄" => "张三"]]];
+foreach ($people as $p) {
+    foreach ($p as $m) {
+        foreach ($m as $k) {
+            echo $k;
+        }
+    }
+}
+
+//while循环
+$a = 0;;
+while ($a < 100) {
+    echo $a;
+}
+do {
+    $a++;
+} while ($a < 100);
+

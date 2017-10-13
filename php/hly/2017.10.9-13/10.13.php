@@ -31,6 +31,8 @@ write();//调用函数
 
 //PHP 函数参数
 function lastName($lName, $year) {
+
+
     echo "$lName 张 Born in $year" . "\n\r";
 }
 

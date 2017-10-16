@@ -163,7 +163,7 @@ add();*/
  */
 /*function getStudentList() {
     //获取mysql 链接对象
-    $mysql = DbHelper::getPDO();
+    $10.10 = DbHelper::getPDO();
     //定义sql语句
     $sqlStr = <<<sql
     SELECT 
@@ -177,7 +177,7 @@ add();*/
 sql;
 
     //准备sql语句
-    $stmt = $mysql->prepare($sqlStr);
+    $stmt = $10.10->prepare($sqlStr);
     //执行sql语句
     $stmt->execute();
     //获取返回结果
@@ -249,7 +249,7 @@ echo "输出结果".$result."<br>";*/
 
 
 function getBookList(){
-$dbms = 'mysql';     //数据库类型
+$dbms = '10.10';     //数据库类型
 $host = 'localhost'; //数据库主机名
 $dbName = 'Study';    //使用的数据库
 $user = 'root';      //数据库连接用户名

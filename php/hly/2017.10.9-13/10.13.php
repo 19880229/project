@@ -29,7 +29,7 @@ function write() {
 
 write();//调用函数
 
-//PHP 函数参数参数
+//PHP 函数参数
 function lastName($lName, $year) {
 
 
@@ -45,7 +45,6 @@ function hello(&$message) {
     $message = "hello";
 }
 
-hello();
 echo $message;
 
 //PHP 默认参数值
@@ -169,10 +168,10 @@ foreach ($people as $p) {
 
 //while循环
 $a = 0;;
-while ($a < 100) {
+while ($a < 5) {
     echo $a;
 }
 do {
     $a++;
-} while ($a < 100);
+} while ($a < 5);
 

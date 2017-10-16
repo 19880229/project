@@ -1,0 +1,38 @@
+1.字段串方法练习(常用如下)
+strlen(),lcfirst(),ltrim(),rtrim(),trim(),str_replace(),
+str_split(),strpos(),stripos(),strrpos(),strstr(),stristr()
+strtolower(),strtoupper(),substr(),ucfirst()
+
+
+2.数组练习
+
+ 索引数组练习
+ 关联数组练习
+ 多维数组练习
+
+3.常用数组方法练习
+
+sort() - 以升序对数组排序
+rsort() - 以降序对数组排序
+asort() - 根据值，以升序对关联数组进行排序
+ksort() - 根据键，以升序对关联数组进行排序
+arsort() - 根据值，以降序对关联数组进行排序
+krsort() - 根据键，以降序对关联数组进行排序
+
+array_chunk()
+array_flip()
+array_keys()
+array_values(),
+array_splice()
+array_slice()
+array_shift()
+array_unshift()
+array_reverse()
+array_unique()
+count()
+in_array()
+array_search()
+array_push()
+array_merge()
+array_key_exists()
+array_diff()

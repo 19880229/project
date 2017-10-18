@@ -1,3 +1,7 @@
-1.超全局变量学习
+1.日期相关函数学习
 
-  重点看$_POST,$_GET
+ 常用函数
+ date(format,timestamp)
+ strtotime(time,now)
+ date_diff()
+ time()

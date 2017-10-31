@@ -6,7 +6,7 @@
  * Time: 18:09
  */
 
-require_once __DIR__ . '/../db/DbHelper.php';
+require_once __DIR__ . '/../../db/DbHelper.php';
 
 class book {
     public function add($name, $author, $salary, $type, $addTime, $updateTime) {
@@ -78,6 +78,6 @@ sql;
 }
 
 $book = new book();
-$book->add('《红楼梦》', '施耐庵', 50, '名著', '2017-4-1', '2017-5-2');
+$book->add('《等等》', '施耐庵', 50, '名著', '2017-4-1', '2017-5-2');
 $book->update('《三国演义》', '罗贯中');
 $book->select('鲁迅');
